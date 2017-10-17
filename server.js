@@ -2,15 +2,26 @@
 var express = require('express')
 var bodyParser = require('body-parser');
 
+//models
+var passport = require('./models/passport');
+
+//routes
+var authRoute = require('./routes/authRoute');
+
 //rockenroll
 var app = express();
 var port = 3000;
+
+//fb
+app.use(passport.initialize());
 
 //middleware
 app.use(express.static('public'));
 app.use(express.static('node_modules'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use('/auth', authRoute);
 
 //default
 app.all('[^.]+', function(req, res) {
