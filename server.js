@@ -17,8 +17,8 @@ app.all('[^.]+', function(req, res) {
   res.sendFile(__dirname + "/public/index.html")
 });
 
-// main error handler
-//404 error
+// main error handlers
+
 app.use(function(req, res, next){
   var err = new Error('Page Not found');
   err.status = 404;
