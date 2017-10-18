@@ -12,6 +12,7 @@ passport.use(new FacebookStrategy({
     profileFields : ['id', 'displayName', 'photos', 'email' ]
   },
   function(accessToken, refreshToken, profile, done){
+    
     console.log("This is profile: " , profile);
     return done(null, profile)
   }));

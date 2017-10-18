@@ -17,13 +17,13 @@
                     <img src="http://d33wubrfki0l68.cloudfront.net/0807d6f055a49c915572e7de6ec31ee3efe68717/66ab7/images/logo_white.png" alt="">
                 </div>
                 <div class="pull-right">
-                  <p class="navbar-text"> Hello {{currentUser}}</p>
+                  <p class="navbar-text"> Hello {{currentUser.name}}</p>
                   <a ng-hide = "currentUser" target="_self" href="/auth/facebook" class="pull-right btn navbar-btn btn-primary">Login</a>
                   <button ng-show = "currentUser" type="button" ng-click="logout()" class="btn btn-primary navbar-btn">Log Out</button>
                 </div>
             </div>
         </nav>
-        <h1>hi {{currentUser}}</h1>
+        <!--magic-->
         <ui-view ></ui-view>
     </div>
     <!-- scripts -->

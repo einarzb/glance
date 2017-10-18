@@ -13,25 +13,24 @@ $stateProvider
 })
 
 .state('auth', {
-  url: '/authorization?id&name',
+  url: '/authorization?id&name&photo',
   controller: function($stateParams, $rootScope, $state , $http) {
-    console.log($stateParams);
-    console.log($stateParams.id);
     if ($stateParams.id) {
       var user = {
         name: $stateParams.name,
-        id: $stateParams.id
+        id: $stateParams.id,
+        photo:$stateParams.photo
       }
-      console.log(user.name);
-      console.log(user.id);
+
     localStorage.setItem("user", JSON.stringify(user));
-    $rootScope.currentUser = $stateParams.name;
+    console.log(user.photo);
+    $rootScope.currentUser = user;
+
     //set the header for all requests
     $http.defaults.headers.common.Authorization = 'User ' + user.name;
     $state.go('home');
   }
 }})
-
 });
 
 app.run(function($rootScope) {
