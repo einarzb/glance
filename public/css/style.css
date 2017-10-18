@@ -90,3 +90,26 @@ hr {
 .fbPic {
   border-radius: 50%;
 }
+
+/*
+gallery page
+*/
+.thumbnail {
+  height: 450px;
+  width:280px;
+  margin-left: 12px;
+  margin-bottom: 10px;
+}
+
+.thumbnail img {
+  border:2px solid red;
+  min-height:230px;
+  height:250px;
+  width:240px;
+  margin-bottom: -15px;
+  margin-top:30px;
+}
+
+.item {
+    margin-bottom: 30px;
+}

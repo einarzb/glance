@@ -1,8 +1,16 @@
 <div class="row">
   <div class="text-center col-lg-12 col-md-12 col-xs-12">
     <h1>cats</h1>
-  <hr>
-  
- </div>
+    <hr>
+      <div ng-repeat="cat in cats track by $index">
+        <div class="clearfix" ng-if="$index % 4 == 0"></div>
+          <div class="col-md-3 col-sm-6 item thumbnail">
+                <img ng-src="{{cat.media.m}}" alt="" />
+                <div class="caption">
+                    <h4> {{cat.title}}</h4>
+                </div>
+          </div>
+      </div>
+    </div>
 </div>
 <div ui-view></div>
