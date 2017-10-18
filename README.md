@@ -1,5 +1,5 @@
 # Glance by Einar Barzilay
-### Single-Page-Application
+### Single Page Application that shows an amazing-never-seen-before timer /n and cats gallery! who doesn't like cats?
 
 ## Instructions
 
