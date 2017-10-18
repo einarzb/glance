@@ -2,10 +2,42 @@ html, body{
   font-size: 16px;
 }
 
-.navbar, .navbar-default{
-  background-color: #000;
+a, a:hover {
+  text-decoration: none;
+  color:#fff;
 }
 
+.navbar, .navbar-default {
+background-color: #000;
+height:70px;
+}
+
+.navbar-brand{
+  margin-top: 0px;
+  height:70px;
+}
+
+.navbar-default .navbar-text{
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.greet{
+  margin-top:10px;
+}
+.logBtn {
+display: flex;
+cursor: pointer;
+align-items: center;
+height: 30px;
+font-size: 0.9em;
+margin-top: 20px;
+padding: 0 30px;
+color: #fff;
+border: 1px solid #fff;
+}
+
+/* main page*/
 @keyframes fadeIn {
   0% {
     position: absolute;

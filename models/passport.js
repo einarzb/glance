@@ -9,7 +9,7 @@ passport.use(new FacebookStrategy({
     clientID: FACEBOOK_APP_ID,
     clientSecret: FACEBOOK_APP_SECRET,
     callbackURL: "http://localhost:3000/auth/facebook/callback",
-    profileFields : ['id', 'displayName', 'photos', 'email' ]
+    profileFields : ['id', 'displayName', 'photos', 'email', 'first_name' ]
   },
   function(accessToken, refreshToken, profile, done){
     console.log("This is profile: " , profile);

@@ -19,11 +19,13 @@ $stateProvider
       var user = {
         name: $stateParams.name,
         id: $stateParams.id,
-        photo:$stateParams.photo
+        photo:$stateParams.photo,
+        fname:$stateParams.first_name
       }
 
     localStorage.setItem("user", JSON.stringify(user));
-    console.log(user.photo);
+    console.log(user);
+
     $rootScope.currentUser = user;
 
     //set the header for all requests

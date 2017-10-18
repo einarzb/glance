@@ -7,7 +7,7 @@ router.get('/facebook', passport.authenticate('facebook' , { scope: ['user_frien
 router.get('/facebook/callback',
   passport.authenticate('facebook', { session: false, failureRedirect: "/" }),
   function(req, res) {
-    res.redirect('/authorization?id=' + req.user.id + "&name=" + req.user.displayName +"&photo=" + req.user.photos[0].value);
+    res.redirect('/authorization?id=' + req.user.id + "&name=" + req.user.displayName +"&photo=" + req.user.photos[0].value + "&fname=" + req.user.first_name);
   }
 );
 
