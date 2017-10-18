@@ -95,14 +95,16 @@ hr {
 gallery page
 */
 .thumbnail {
-  height: 450px;
+  height: 350px;
   width:280px;
   margin-left: 12px;
   margin-bottom: 10px;
 }
 
 .thumbnail img {
-  border:2px solid red;
+  border:2px solid grey;
+  box-sizing: border-box;
+  border-radius: 5px;
   min-height:230px;
   height:250px;
   width:240px;
@@ -111,5 +113,6 @@ gallery page
 }
 
 .item {
+    margin-top: 10px; 
     margin-bottom: 30px;
 }

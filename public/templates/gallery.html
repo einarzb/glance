@@ -2,9 +2,9 @@
   <div class="text-center col-lg-12 col-md-12 col-xs-12">
     <h1>cats</h1>
     <hr>
-      <div ng-repeat="cat in cats track by $index">
+      <div class="text-center" ng-repeat="cat in cats track by $index">
         <div class="clearfix" ng-if="$index % 4 == 0"></div>
-          <div class="col-md-3 col-sm-6 item thumbnail">
+          <div class="col-md-6 col-md-push-1 col-sm-6 item thumbnail">
                 <img ng-src="{{cat.media.m}}" alt="" />
                 <div class="caption">
                     <h4> {{cat.title}}</h4>
