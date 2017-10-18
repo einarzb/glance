@@ -12,6 +12,12 @@ $stateProvider
   templateUrl:'/templates/home.html'
 })
 
+.state('gallery',{
+  url:'/gallery',
+  controller:'mainController',
+  templateUrl:'/templates/gallery.html'
+})
+
 .state('auth', {
   url: '/authorization?id&name&photo',
   controller: function($stateParams, $rootScope, $state , $http) {
@@ -24,15 +30,13 @@ $stateProvider
       }
 
     localStorage.setItem("user", JSON.stringify(user));
-    console.log(user);
-
     $rootScope.currentUser = user;
 
     //set the header for all requests
     $http.defaults.headers.common.Authorization = 'User ' + user.name;
     $state.go('home');
-  }
-}})
+    }
+  }})
 });
 
 app.run(function($rootScope) {

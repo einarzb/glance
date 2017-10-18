@@ -3,6 +3,9 @@ html, body{
   color:#fff;
 }
 
+h1,h2{
+  color:#000;
+}
 a {
   text-decoration: none;
   color:#fff;
