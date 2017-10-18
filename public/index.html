@@ -13,7 +13,10 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <img class="navbar-brand" src="http://d33wubrfki0l68.cloudfront.net/0807d6f055a49c915572e7de6ec31ee3efe68717/66ab7/images/logo_white.png" alt="">
+                    <a class="navbar-brand" ui-sref="home">
+                      <img src="http://d33wubrfki0l68.cloudfront.net/0807d6f055a49c915572e7de6ec31ee3efe68717/66ab7/images/logo_white.png" alt="">
+                    </a>
+                  </ui>
                 </div>
                 <div class="pull-right greet" ng-show="currentUser">
                   <p class="navbar-text"> Hi {{currentUser.name}}!</p>
