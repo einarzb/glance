@@ -1,10 +1,17 @@
 html, body{
   font-size: 16px;
+  color:#fff;
 }
 
-a, a:hover {
+a {
   text-decoration: none;
   color:#fff;
+}
+
+a:hover {
+  text-decoration: none;
+  color:#fff;
+  background-color: rgba(0, 255, 178, 0.7);
 }
 
 .navbar, .navbar-default {
