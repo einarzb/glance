@@ -18,6 +18,12 @@ $stateProvider
   templateUrl:'/templates/gallery.html'
 })
 
+.state('timer',{
+  url:'/timer',
+  controller:'mainController',
+  templateUrl:'/templates/timer.html'
+})
+
 .state('auth', {
   url: '/authorization?id&name&photo',
   controller: function($stateParams, $rootScope, $state , $http) {
