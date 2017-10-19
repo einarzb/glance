@@ -13,12 +13,22 @@ app.directive("timer", function($interval){
           function tick(){
              time++;
              $s.seconds = pad(time%60);
-             //odd even
              $s.minutes = pad(parseInt(time/60));
              $s.hours = pad(parseInt(time/3600));
            }
 
+           function isEven(number) {
+              if(number % 2 === 0){
+                console.log(number + " is even")
+              }else if(isNaN(number)){
+                return "is Nan";
+              }else{
+                console.log(number + " is odd")
+              }
+            };
+
            function pad(val){
+                   isEven(val);
                    var timeUnit = val + "";
                    if(timeUnit.length < 2){
                        return "0" + timeUnit;
@@ -27,9 +37,14 @@ app.directive("timer", function($interval){
                        return timeUnit;
                    }
            };
+
            tick();
-           $interval(tick,1000)
-      }
+           var timer = $interval(tick,1000);
+
+           $e.on('$destroy', function() {
+             $interval.cancel(timer);
+           });
+         }
     };
 });
 
