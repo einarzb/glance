@@ -20,7 +20,7 @@ $stateProvider
 
 .state('timer',{
   url:'/timer',
-  controller:'mainController',
+  controller:'timeController',
   templateUrl:'/templates/timer.html'
 })
 
