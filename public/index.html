@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="http://myglanceapp.com/favicon.png">
     <title>Glance - By Einar Barzilay</title>
   </head>
+  
   <body>
     <div class="container-fluid" ng-controller="AuthCtrl">
         <nav class="navbar navbar-default">
@@ -16,15 +17,14 @@
                     <a class="navbar-brand" ui-sref="home">
                       <img src="http://d33wubrfki0l68.cloudfront.net/0807d6f055a49c915572e7de6ec31ee3efe68717/66ab7/images/logo_white.png" alt="">
                     </a>
-                  </ui>
                 </div>
                 <div class="pull-right greet" ng-show="currentUser">
-                  <p class="navbar-text"> Hi {{currentUser.name}}!</p>
-                  <img class="fbPic" ng-src="https://graph.facebook.com/{{currentUser.id}}/picture?type=small" alt="">
+                    <p class="navbar-text"> Hi {{currentUser.name}}!</p>
+                    <img class="fbPic" ng-src="https://graph.facebook.com/{{currentUser.id}}/picture?type=small" alt="">
                 </div>
-                  <div class="pull-right">
-                  <a ng-hide="currentUser" target="_self" href="/auth/facebook" class="pull-right logBtn">Login</a>
-                  <p ng-show="currentUser" class="logBtn" type="button" ng-click="logout()">Log Out</p>
+                <div class="pull-right">
+                    <a ng-hide="currentUser" target="_self" href="/auth/facebook" class="pull-right logBtn">Login</a>
+                    <p ng-show="currentUser" class="logBtn" type="button" ng-click="logout()">Log Out</p>
                 </div>
             </div>
         </nav>
