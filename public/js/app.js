@@ -1,5 +1,38 @@
 var app = angular.module('glanceApp', ['ui.router']);
 
+app.directive("timer", function($interval){
+    return {
+      scope: true,
+      template: "<span class='timerUnit'>{{hours}} : {{minutes}} : {{seconds}}</span>",
+      link: function ($s, $e, $a) {
+        $s.minutes;
+        $s.seconds;
+        $s.hours;
+        var time = 0;
+
+          function tick(){
+             time++;
+             $s.seconds = pad(time%60);
+             //odd even
+             $s.minutes = pad(parseInt(time/60));
+             $s.hours = pad(parseInt(time/3600));
+           }
+
+           function pad(val){
+                   var timeUnit = val + "";
+                   if(timeUnit.length < 2){
+                       return "0" + timeUnit;
+                   }
+                   else {
+                       return timeUnit;
+                   }
+           };
+           tick();
+           $interval(tick,1000)
+      }
+    };
+});
+
 app.config(function( $stateProvider, $urlRouterProvider, $httpProvider,$locationProvider) {
 //default
 $urlRouterProvider.otherwise('/home');
@@ -20,7 +53,7 @@ $stateProvider
 
 .state('timer',{
   url:'/timer',
-  controller:'timeController',
+  controller:'mainController',
   templateUrl:'/templates/timer.html'
 })
 
@@ -37,7 +70,6 @@ $stateProvider
 
     localStorage.setItem("user", JSON.stringify(user));
     $rootScope.currentUser = user;
-
     //set the header for all requests
     $http.defaults.headers.common.Authorization = 'User ' + user.name;
     $state.go('home');

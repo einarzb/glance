@@ -1,6 +1,6 @@
 html, body{
   font-size: 16px;
-  color:#fff;
+  color:#000;
 }
 
 h1,h2{
@@ -121,7 +121,7 @@ gallery page
 timer page
 */
 
-.timer {
+.timerUnit {
   color:#000;
-  font-size: 5.6em;
+  font-size:1em;
 }

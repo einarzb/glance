@@ -1,32 +1,29 @@
 app.controller('timeController', ['$scope', '$interval', function($scope, $interval) {
 
+    $scope.minutes;
+    $scope.seconds;
+    $scope.hours;
 
-/* timer */
-$scope.minutes;
-$scope.seconds;
-$scope.hours;
+    var time = 0;
 
-var totalSec = 0;
-var tick = function(){
-  totalSec++;
-  $scope.seconds = pad(totalSec%60);
-  $scope.minutes = pad(parseInt(totalSec/60));
-  $scope.hours = pad(parseInt(totalSec/3600));
-}
+   function tick(){
+      time++;
+      $scope.seconds = pad(time%60);
+      //odd even
+      $scope.minutes = pad(parseInt(time/60));
+      $scope.hours = pad(parseInt(time/3600));
+    }
 
-tick();
-$interval(tick,1000)
+    function pad(val){
+            var timeUnit = val + "";
+            if(timeUnit.length < 2){
+                return "0" + timeUnit;
+            }
+            else {
+                return timeUnit;
+            }
+    };
 
-   function pad(val){
-       var valString = val + "";
-       if(valString.length < 2)
-       {
-           return "0" + valString;
-       }
-       else
-       {
-           return valString;
-       }
-   }
-
+    tick();
+    $interval(tick,1000)
  }]);
