@@ -7,11 +7,6 @@ h1,h2{
   color:#000;
 }
 
-.timer {
-  color:#000;
-  font-size: 5.6em;
-}
-
 a {
   text-decoration: none;
   color:#fff;
@@ -121,4 +116,12 @@ gallery page
 .item {
     margin-top: 10px;
     margin-bottom: 30px;
+}
+/*
+timer page
+*/
+
+.timer {
+  color:#000;
+  font-size: 5.6em;
 }
