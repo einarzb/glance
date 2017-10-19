@@ -4,7 +4,7 @@ app.controller('mainController',
 
   $scope.getCats = dataFactory.getCats()
     .then(function(response){
-      $scope.cats = response; 
+      $scope.cats = response;
     })
     .catch(function(error){
       console.log(error);

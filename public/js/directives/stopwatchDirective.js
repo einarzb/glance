@@ -1,4 +1,6 @@
-app.directive("timer", function($interval){
+app.directive("stopwatch",
+  ['$interval', function($interval){
+
     return {
       scope: true,
       template: "<span class='timerUnit'>{{hours}} : {{minutes}} : {{seconds}}</span>",
@@ -17,12 +19,9 @@ app.directive("timer", function($interval){
 
            function isEven(number) {
               if(number % 2 === 0){
-                console.log(number + " is even");
-                //append class even to $scope
               } else if(isNaN(number)){
                 return "is Nan";
               }else{
-                console.log(number + " is odd")
               }
             };
 
@@ -48,4 +47,4 @@ app.directive("timer", function($interval){
            });
          }
     };
-});
+}]);

@@ -1,26 +1,28 @@
 var app = angular.module('glanceApp', ['ui.router']);
-app.config(function( $stateProvider, $urlRouterProvider, $httpProvider,$locationProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $httpProvider,$locationProvider) {
 //default
 $urlRouterProvider.otherwise('/home');
-
 $locationProvider.html5Mode(true);
+
+//states
 $stateProvider
+
 .state('home',{
   url:'/home',
   controller:'mainController',
   templateUrl:'/templates/home.html'
 })
 
+.state('stopwatch',{
+  url:'/stopwatch',
+  controller:'mainController',
+  templateUrl:'/templates/stopwatch.html'
+})
+
 .state('gallery',{
   url:'/gallery',
   controller:'mainController',
   templateUrl:'/templates/gallery.html'
-})
-
-.state('timer',{
-  url:'/timer',
-  controller:'mainController',
-  templateUrl:'/templates/timer.html'
 })
 
 .state('auth', {
@@ -34,11 +36,11 @@ $stateProvider
         fname:$stateParams.first_name
       }
 
-    localStorage.setItem("user", JSON.stringify(user));
-    $rootScope.currentUser = user;
-    //set the header for all requests
-    $http.defaults.headers.common.Authorization = 'User ' + user.name;
-    $state.go('home');
+      localStorage.setItem("user", JSON.stringify(user));
+      $rootScope.currentUser = user;
+      //set the header for all requests
+      $http.defaults.headers.common.Authorization = 'User ' + user.name;
+      $state.go('home');
     }
   }})
 });
