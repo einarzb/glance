@@ -4,7 +4,7 @@ app.directive("stopwatch",
 
     return {
       scope: true,
-      template: "<span class='timerUnit' ng-class='secColor'>{{hours}} : {{minutes}} : {{seconds}}</span>",
+      template: "</i><span class='timerUnit' ng-class='secColor'><span class='fa fa-clock-o'></span> {{hours}} : {{minutes}} : {{seconds}}</span>",
       link: function ($scope, $element, $attributes) {
         $scope.minutes;
         $scope.seconds;
