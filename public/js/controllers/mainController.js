@@ -1,13 +1,10 @@
-app.controller('mainController', ['$scope', 'glanceFactory', '$state', function($scope, glanceFactory, $state) {
+app.controller('mainController',
+  ['$scope', 'dataFactory', '$state',
+    function($scope, dataFactory, $state) {
 
-/* gallery*/
-  $scope.cats = [];
-
-  $scope.getCats = glanceFactory.getCats;
-
-  $scope.getCats()
+  $scope.getCats = dataFactory.getCats()
     .then(function(response){
-      $scope.cats = response; //the items are populating the array
+      $scope.cats = response; 
     })
     .catch(function(error){
       console.log(error);

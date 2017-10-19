@@ -3,7 +3,7 @@ var app = angular.module('glanceApp', ['ui.router']);
 app.directive("timer", function($interval){
     return {
       scope: true,
-      template: "<span ng-style='{'color':{{seconds}} % 2 === 0 ? 'red': 'black'}' class='timerUnit'>{{hours}} : {{minutes}} : {{seconds}}</span>",
+      template: "<span class='timerUnit'>{{hours}} : {{minutes}} : {{seconds}}</span>",
       link: function ($scope, $element, $attributes) {
         $scope.minutes;
         $scope.seconds;
