@@ -1,4 +1,4 @@
-app.factory('glanceFactory', function($http) {
+app.factory('dataFactory', function($http) {
 
   function getCats(){
       return $http({

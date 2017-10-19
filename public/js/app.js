@@ -3,18 +3,18 @@ var app = angular.module('glanceApp', ['ui.router']);
 app.directive("timer", function($interval){
     return {
       scope: true,
-      template: "<span ng-class='{even:object == 'yes', odd:object == 'no'}' class='timerUnit'>{{hours}} : {{minutes}} : {{seconds}}</span>",
-      link: function ($s, $e, $a) {
-        $s.minutes;
-        $s.seconds;
-        $s.hours;
+      template: "<span ng-style='{'color':{{seconds}} % 2 === 0 ? 'red': 'black'}' class='timerUnit'>{{hours}} : {{minutes}} : {{seconds}}</span>",
+      link: function ($scope, $element, $attributes) {
+        $scope.minutes;
+        $scope.seconds;
+        $scope.hours;
         var time = 0;
 
           function tick(){
              time++;
-             $s.seconds = pad(time%60);
-             $s.minutes = pad(parseInt(time/60));
-             $s.hours = pad(parseInt(time/3600));
+             $scope.seconds = pad(time%60);
+             $scope.minutes = pad(parseInt(time/60));
+             $scope.hours = pad(parseInt(time/3600));
            }
 
            function isEven(number) {
@@ -45,7 +45,7 @@ app.directive("timer", function($interval){
            tick();
            var timer = $interval(tick,1000);
 
-           $e.on('$destroy', function() {
+           $element.on('$destroy', function() {
              $interval.cancel(timer);
            });
          }
