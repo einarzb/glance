@@ -18,6 +18,7 @@ app.directive("timer", function($interval){
            }
 
            function isEven(number) {
+             console.log(number);
               if(number % 2 === 0){
                 console.log(number + " is even")
               }else if(isNaN(number)){
@@ -28,8 +29,12 @@ app.directive("timer", function($interval){
             };
 
            function pad(val){
-                   isEven(val);
+                   console.log("im val " + val);
+                   if (val < 10){
+                     isEven(val)
+                   }
                    var timeUnit = val + "";
+
                    if(timeUnit.length < 2){
                        return "0" + timeUnit;
                    }
