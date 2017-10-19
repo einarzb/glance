@@ -1,3 +1,7 @@
+/*
+  GENERAL
+*/
+
 html, body{
   font-size: 16px;
   color:#000;
@@ -6,7 +10,6 @@ html, body{
 h1,h2{
   color:#000;
 }
-
 
 hr {
   border:none;
@@ -45,8 +48,9 @@ height:70px;
   font-size: 1.1em;
 }
 
-/*fb auth*/
-
+/*
+  FB AUTH
+*/
 .fbPic {
   border-radius: 50%;
 }
@@ -67,7 +71,10 @@ color: #fff;
 border: 1px solid #fff;
 }
 
-/* main page animation*/
+/*
+  MAIN PAGE ANIMATION
+*/
+
 @keyframes fadeIn {
   0% {
     position: absolute;
@@ -97,8 +104,9 @@ border: 1px solid #fff;
 }
 
 /*
-gallery page
+  GALLERY PAGE
 */
+
 .thumbnail {
   height: 350px;
   width:280px;
@@ -121,19 +129,17 @@ gallery page
     margin-top: 10px;
     margin-bottom: 30px;
 }
+
 /*
-timer
+  STOP WATCH
 */
 
 .timerUnit {
-  color:#000;
   font-size:4.5em;
 }
-
 .even {
-  color:red;
+	color: red;
 }
-
 .odd {
-  color:green;
+	color: green;
 }
