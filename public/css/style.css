@@ -69,7 +69,6 @@ border: 1px solid #fff;
 }
 
 .intro {
-  font-size: 8.4em;
   position: absolute;
   top: 5em;
   opacity: 0;
@@ -123,5 +122,5 @@ timer page
 
 .timerUnit {
   color:#000;
-  font-size:1em;
+  font-size:4.5em;
 }
