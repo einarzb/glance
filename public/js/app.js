@@ -3,7 +3,7 @@ var app = angular.module('glanceApp', ['ui.router']);
 app.directive("timer", function($interval){
     return {
       scope: true,
-      template: "<span class='timerUnit'>{{hours}} : {{minutes}} : {{seconds}}</span>",
+      template: "<span ng-class='{even:object == 'yes', odd:object == 'no'}' class='timerUnit'>{{hours}} : {{minutes}} : {{seconds}}</span>",
       link: function ($s, $e, $a) {
         $s.minutes;
         $s.seconds;
@@ -18,10 +18,10 @@ app.directive("timer", function($interval){
            }
 
            function isEven(number) {
-             console.log(number);
               if(number % 2 === 0){
-                console.log(number + " is even")
-              }else if(isNaN(number)){
+                console.log(number + " is even");
+                //append class even to $scope
+              } else if(isNaN(number)){
                 return "is Nan";
               }else{
                 console.log(number + " is odd")
@@ -29,8 +29,7 @@ app.directive("timer", function($interval){
             };
 
            function pad(val){
-                   console.log("im val " + val);
-                   if (val < 10){
+                   if (val < 60){
                      isEven(val)
                    }
                    var timeUnit = val + "";

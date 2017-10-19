@@ -129,3 +129,11 @@ timer
   color:#000;
   font-size:4.5em;
 }
+
+.even {
+  color:red;
+}
+
+.odd {
+  color:green;
+}
